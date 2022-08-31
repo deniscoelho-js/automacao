@@ -9,7 +9,8 @@ public class Driver {
     public WebDriver Webdriver(){
         System.setProperty("webdriver.chrome.driver", "C:\\selenium\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.amazon.com/");
+        driver.get("https://www.amazon.com.br/");
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return driver;
     }
