@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import pagina.livro.LivroTela;
 import webdriver.Driver;
 
 public class LivroTest {
@@ -21,10 +20,12 @@ public class LivroTest {
     @Test
     public void LivroTest(){
         LivroFunc livroFunc01 = new LivroFunc(driver);
-        livroFunc01.fazerPesquisaDoLivro(Livros.CLEAN_CODE);
+        livroFunc01.fazerPesquisaDoLivroClean(Livros.CLEAN_CODE);
 
-        // o codigo está passando, só falta implementar o segundo objeto e as outras funcionalidades
+        LivroFunc livroFunc02 = new LivroFunc(driver);
+        livroFunc02.fazerPesquisaDoLivroRefatoracao(Livros.SELENIUM_WEBDRIVER);
     }
+
 
     @After
     public void fecharBrowser(){

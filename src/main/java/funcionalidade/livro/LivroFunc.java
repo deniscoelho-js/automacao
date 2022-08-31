@@ -12,11 +12,15 @@ public class LivroFunc {
         this.driver = driver;
     }
 
-    public void fazerPesquisaDoLivro(String... textoPesquisado){
+    public void fazerPesquisaDoLivroClean(String... textoPesquisado){
         new LivroTela(driver).pesquisarLivro(textoPesquisado)
-                .tocarLivroPesquisado()
-                .adicionarAoCarrinho()
-                .TelaHome()
-        ;
+                .tocarLivroPesquisadoClean()
+                .adicionarAoCarrinho();
+    }
+
+    public void fazerPesquisaDoLivroRefatoracao(String... textoPesquisado){
+        new LivroTela(driver).pesquisarLivro(textoPesquisado)
+                .tocarLivroPesquisadoSelenium()
+                .adicionarAoCarrinho();
     }
 }
