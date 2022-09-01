@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import pagina.livro.LivroTela;
 
 public class CarrinhoTela {
     private WebDriver driver;
@@ -27,6 +28,9 @@ public class CarrinhoTela {
     @FindBy(how = How.XPATH, using = "//span[@id='sc-subtotal-label-activecart']")
     private WebElement campoSubTotal;
 
+    @FindBy(how = How.XPATH, using = "//input[@aria-label='Excluir C&oacute;digo limpo: Habilidades pr&aacute;ticas do Agile Software']")
+    private WebElement botaoExcluirCodigoLimpo;
+
     public CarrinhoTela tocarIrParaCarrinho(){
         irParaCarrinhoBotao.click();
         return this;
@@ -42,6 +46,11 @@ public class CarrinhoTela {
 
     public boolean verificaQuantidadeNoCarrinho(String quantidade){
         return campoSubTotal.getText().contains(quantidade);
+    }
+
+    public CarrinhoTela tocarExcluirLivroCodigoLimpo(){
+        botaoExcluirCodigoLimpo.click();
+        return this;
     }
 
 }

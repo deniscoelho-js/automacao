@@ -18,15 +18,9 @@ public class CarrinhoFunc {
                 ;
     }
 
-//    public void verificaCleanCode(){
-//        new CarrinhoTela(driver)
-//                .verificaCleanCodeEstaNoCarrinho()
-//                ;
-//    }
-
-//    public void verificaSelenium(){
-//        new CarrinhoTela(driver)
-//                .verificaSeleniumEstaNoCarrinho()
-//                ;
-//    }
+    public void deletarCodigoLimpoDoCarrinho(){
+        new CarrinhoTela(driver)
+                .tocarExcluirLivroCodigoLimpo()
+                ;
+    }
 }

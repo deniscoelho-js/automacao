@@ -1,6 +1,7 @@
 package livro;
 
 import constantes.livro.Livros;
+import constantes.livro.QtdCarrinho;
 import funcionalidade.carrinho.CarrinhoFunc;
 import funcionalidade.livro.LivroFunc;
 import org.junit.After;
@@ -33,14 +34,12 @@ public class LivroTest {
 
         CarrinhoTela carrinhoTela = new CarrinhoTela(driver);
 
-        // Valida se os 2 estão no carrinho
-        Assert.assertEquals(Livros.VALIDAR_CODIGO_LIMPO, carrinhoTela.verificaCodigoLimpoEstaNoCarrinho());
-        Assert.assertEquals(Livros.VALIDAR_JAVA, carrinhoTela.verificaJavaEstaNoCarrinho());
+        Assert.assertTrue(carrinhoTela.verificaQuantidadeNoCarrinho(QtdCarrinho.DOIS));
 
-        Assert.assertTrue(carrinhoTela.verificaQuantidadeNoCarrinho("2"));
+        CarrinhoFunc carrinhoFunc2 = new CarrinhoFunc(driver);
+        carrinhoFunc2.deletarCodigoLimpoDoCarrinho();
 
-        //falta implementar retirar 1 item do carrinho e validar se o item está fora
-
+        Assert.assertTrue(carrinhoTela.verificaQuantidadeNoCarrinho(QtdCarrinho.UM));
     }
 
 

@@ -36,7 +36,7 @@ public class LivroTela {
         return this;
     }
 
-    public LivroTela tocarLivroPesquisadoClean(){
+    public LivroTela tocarLivroPesquisadoCodigoLimpo(){
         botaoDoLivro_Clean.click();
         return this;
     }
